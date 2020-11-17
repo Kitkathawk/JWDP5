@@ -108,8 +108,8 @@ $yiq-text-light:            $white !default;
 
 $enable-caret:                                true !default;
 $enable-rounded:                              true !default;
-$enable-shadows:                              false !default;
-$enable-gradients:                            false !default;
+$enable-shadows:                              true !default;
+$enable-gradients:                            true !default;
 $enable-transitions:                          true !default;
 $enable-prefers-reduced-motion-media-query:   true !default;
 $enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
@@ -232,8 +232,8 @@ $line-height-sm:              1.5 !default;
 $border-width:                1px !default;
 $border-color:                $gray-300 !default;
 
-$border-radius:               .25rem !default;
-$border-radius-lg:            .3rem !default;
+$border-radius:               .3rem !default;
+$border-radius-lg:            .5rem !default;
 $border-radius-sm:            .2rem !default;
 
 $rounded-pill:                50rem !default;
@@ -323,7 +323,7 @@ $blockquote-small-color:      $gray-600 !default;
 $blockquote-small-font-size:  $small-font-size !default;
 $blockquote-font-size:        $font-size-base * 1.25 !default;
 
-$hr-border-color:             rgba($black, .1) !default;
+$hr-border-color:             rgba($black, .3) !default;
 $hr-border-width:             $border-width !default;
 
 $mark-padding:                .2em !default;
