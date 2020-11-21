@@ -2165,7 +2165,7 @@ input[type="button"].btn-block {
   float: left;
   min-width: 10rem;
   padding: 0.5rem 0;
-  margin: 0.125rem 0 0;
+  margin: 0.12rem 0 0;
   font-size: 1rem;
   color: #212529;
   text-align: left;
@@ -2216,11 +2216,14 @@ input[type="button"].btn-block {
     right: 0;
     left: auto; } }
 
+.dropdown:hover .dropdown-menu {
+  display: block; }
+
 .dropup .dropdown-menu {
   top: auto;
   bottom: 100%;
   margin-top: 0;
-  margin-bottom: 0.125rem; }
+  margin-bottom: 0.12rem; }
 
 .dropup .dropdown-toggle::after {
   display: inline-block;
@@ -2240,7 +2243,7 @@ input[type="button"].btn-block {
   right: auto;
   left: 100%;
   margin-top: 0;
-  margin-left: 0.125rem; }
+  margin-left: 0.12rem; }
 
 .dropright .dropdown-toggle::after {
   display: inline-block;
@@ -2263,7 +2266,7 @@ input[type="button"].btn-block {
   right: 100%;
   left: auto;
   margin-top: 0;
-  margin-right: 0.125rem; }
+  margin-right: 0.12rem; }
 
 .dropleft .dropdown-toggle::after {
   display: inline-block;
@@ -3024,6 +3027,7 @@ input[type="button"].btn-block {
   align-items: center; }
 
 .navbar-toggler {
+  margin-right: 20px;
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
@@ -3221,7 +3225,8 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.1); }
+  border-color: rgba(255, 255, 255, 0.1);
+  margin-right: 20px; }
 
 .navbar-dark .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
