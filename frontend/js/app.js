@@ -1,26 +1,39 @@
+// PRODUCT LISTING
+
 fetch('http://localhost:3002/api/cameras')
   .then(response => response.json())
   .then(function(data){
-
-  	console.log(data)
   	
   	let catalog = document.getElementById('listing');
   	
   	for (let i = 0; i < data.length; i++) {
 
-  		let ul = document.createElement('ul');
-  		let imageUrlLi = document.createElement('li');
-  		let nameLi = document.createElement('li');
-  		let priceLi = document.createElement('li');
+  		let div = document.createElement('div');
+  		let itemImage = document.createElement('img');
+  		let itemName = document.createElement('h5');
+  		let itemPrice = document.createElement('p');
 
-  		imageUrlLi.textContent = data[i].imageUrl;
-  		nameLi.textContent = data[i].name;
-  		priceLi.textContent = data[i].price;
+  		itemImage.setAttribute('src', data[i].imageUrl);
+  		itemName.textContent = data[i].name;
+  		itemPrice.textContent = data[i].price;
 
-  		ul.append(imageUrlLi);
-  		ul.append(nameLi);
-  		ul.append(priceLi);
-  		catalog.append(ul);
+  		div.classList.add("col-12", "col-lg-4", "product", "thumbnail", "thumbnail-3");
+
+  		div.append(itemImage);
+  		div.append(itemName);
+  		div.append(itemPrice);
+  		catalog.append(div);
   	}
+
+  });
+
+
+// PRODUCT DETAIL
+
+fetch('http://localhost:3002/api/cameras/')
+  .then(response => response.json())
+  .then(function(data){
+
+  	console.log(data);
 
   });
