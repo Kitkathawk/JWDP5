@@ -8,7 +8,9 @@ fetch('http://localhost:3002/api/cameras')
   	
   	for (let i = 0; i < data.length; i++) {
 
-  		let div = document.createElement('div');
+  		let li = document.createElement('li');
+  		let article = document.createElement('article');
+  		let link = document.createElement('a');
   		let itemImage = document.createElement('img');
   		let itemName = document.createElement('h5');
   		let itemPrice = document.createElement('p');
@@ -17,12 +19,17 @@ fetch('http://localhost:3002/api/cameras')
   		itemName.textContent = data[i].name;
   		itemPrice.textContent = data[i].price;
 
-  		div.classList.add("col-12", "col-lg-4", "product", "thumbnail", "thumbnail-3");
+  		li.classList.add('col', 'col-lg-4', 'card');
+  		itemImage.classList.add('card-img-top', 'rounded', 'shadow');
 
-  		div.append(itemImage);
-  		div.append(itemName);
-  		div.append(itemPrice);
-  		catalog.append(div);
+  		link.append(itemImage);
+  		article.append(link);
+  		article.append(itemName);
+  		article.append(itemPrice);
+  		li.append(article);
+  		catalog.append(li);
+
+  		link.setAttribute('href', 'http://localhost:3002/api/cameras/' + data[i]._id);
   	}
 
   });
@@ -30,7 +37,7 @@ fetch('http://localhost:3002/api/cameras')
 
 // PRODUCT DETAIL
 
-fetch('http://localhost:3002/api/cameras/')
+fetch('http://localhost:3002/api/cameras/_id')
   .then(response => response.json())
   .then(function(data){
 
