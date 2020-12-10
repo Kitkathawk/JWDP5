@@ -30,6 +30,7 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 	chooseLens.setAttribute('id', 'lenses');
 	chooseLensLabel.setAttribute('for', 'lenses');
 	chooseLensLabel.textContent = 'Select lens:';
+	shoppingCartBtn.setAttribute('id', 'cart');
 
 	let lenses = data.lenses;	
 	
@@ -64,5 +65,15 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
   	chooseLensLabel.classList.add('mr-2');
   	chooseLens.classList.add('bg-light');
   	shoppingCartBtn.classList.add('btn', 'btn-warning', 'mt-5', 'd-block', 'font-weight-bold');
+
+  	// SHOPPING CART
+
+	let addToCart = document.getElementById('cart');
+
+	addToCart.addEventListener('click', function(){
+
+		alert("Hello")
+
+	});
 
 });
