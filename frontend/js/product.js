@@ -12,30 +12,32 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 	// DOM ELEMENTS
 
 	let article = document.createElement('article');
+	let div = document.createElement('div');
 	let itemImage = document.createElement('img');
 	let itemName = document.createElement('h5');
 	let itemPrice = document.createElement('p');
 	let itemDescription = document.createElement('p');
 	let chooseLens = document.createElement('select');
 	let chooseLensLabel = document.createElement('label');
-	let lensOption = document.createElement('option');
 	let shoppingCartBtn = document.createElement('button');
 
 	// VALUES & ATTRIBUTES
 
 	itemImage.setAttribute('src', data.imageUrl);
 	itemName.textContent = data.name;
-	itemPrice.textContent = data.price;
+	itemPrice.textContent = '$ ' + data.price;
 	itemDescription.textContent = data.description;
 	chooseLens.setAttribute('id', 'lenses');
 	chooseLensLabel.setAttribute('for', 'lenses');
 	chooseLensLabel.textContent = 'Select lens:';
 
-	let lenses = data.lenses;
+	let lenses = data.lenses;	
 	
 	for (let i = 0; i < lenses.length; i++) {
 
-		lensOption.textContent += lenses[i];
+		let lensOption = document.createElement('option');
+		chooseLens.append(lensOption);
+		lensOption.textContent = lenses[i];
 
 	}
 
@@ -43,20 +45,24 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 
 	// HTML STRUCTURE
 
-	chooseLens.append(lensOption);
 	article.append(itemImage);
-	article.append(itemName);
-	article.append(itemPrice);
-	article.append(itemDescription);
-	article.append(chooseLensLabel);
-	article.append(chooseLens);
-	article.append(shoppingCartBtn);
+	div.append(itemName);
+	div.append(itemPrice);
+	div.append(itemDescription);
+	div.append(chooseLensLabel);
+	div.append(chooseLens);
+	div.append(shoppingCartBtn);
+	article.append(div);
 	productDetail.append(article);
 
 	// CLASSES 
 
-  	article.classList.add('col-12', 'col-md-6', 'col-lg-4', 'card', 'mx-auto');
-  	itemImage.classList.add('card-img-top', 'rounded', 'shadow');
-  	shoppingCartBtn.classList.add('btn', 'btn-warning', 'btn-lg');
+  	article.classList.add('col-12', 'col-lg-10', 'px-0', 'card', 'mx-auto', 'mt-4', 'mb-5', 'd-flex', 'flex-row', 'shadow');
+  	div.classList.add('card-body', 'col-6');
+  	itemImage.classList.add('col-6','card-img-top', 'rounded', 'img-fluid', 'pl-0');
+  	itemDescription.classList.add('mb-4');
+  	chooseLensLabel.classList.add('mr-2');
+  	chooseLens.classList.add('bg-light');
+  	shoppingCartBtn.classList.add('btn', 'btn-warning', 'mt-5', 'd-block', 'font-weight-bold');
 
 });

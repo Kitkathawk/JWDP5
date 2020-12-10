@@ -22,7 +22,7 @@ fetch('http://localhost:3002/api/cameras')
   		link.setAttribute('href', 'product-detail.html');
   		itemImage.setAttribute('src', data[i].imageUrl);
   		itemName.textContent = data[i].name;
-  		itemPrice.textContent = data[i].price;
+  		itemPrice.textContent = '$ ' + data[i].price;
 
   		//LOCAL STORAGE
 
@@ -44,8 +44,9 @@ fetch('http://localhost:3002/api/cameras')
 
   		// CLASSES 
 
-  		li.classList.add('col-12', 'col-md-6', 'col-lg-4', 'card');
-  		itemImage.classList.add('card-img-top', 'rounded', 'shadow');
+  		catalog.classList.add('my-5');
+  		li.classList.add('col-12', 'col-md-6', 'col-lg-4', 'card', 'shadow', 'm-2');
+  		itemImage.classList.add('card-img-top', 'rounded');
   	}
 
 });
