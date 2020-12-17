@@ -1,4 +1,4 @@
-// PRODUCT LISTING
+// PRODUCT LISTING //
 
 fetch('http://localhost:3002/api/cameras')
   .then(response => response.json())

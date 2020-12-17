@@ -1,4 +1,4 @@
-// PRODUCT DETAIL
+// PRODUCT DETAIL //
 
 let myStorage = window.localStorage;
 const id = myStorage.getItem('id');
@@ -66,13 +66,55 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
   	chooseLens.classList.add('bg-light');
   	shoppingCartBtn.classList.add('btn', 'btn-warning', 'mt-5', 'd-block', 'font-weight-bold');
 
-  	// SHOPPING CART
+
+// SHOPPING CART //
 
 	let addToCart = document.getElementById('cart');
 
+	//let shoppingCart = [];
+
 	addToCart.addEventListener('click', function(){
 
-		alert("Hello")
+		/*
+		
+			- if a shopping cart item in local storage doesn't exist, create it
+			- if the item in local storage does exist, then replace the array in line 74 with local storage array
+
+		*/
+
+		if (!localStorage.getItem('shoppingCart')) {
+
+			let sendToLocalStorage = JSON.stringify([]);
+
+			localStorage.setItem('shoppingCart', sendToLocalStorage);
+
+		}
+
+		shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+
+		shoppingCart.push(data);
+
+		let sendToLocalStorage = JSON.stringify(shoppingCart);
+
+		localStorage.setItem('shoppingCart', sendToLocalStorage);
+
+
+		// SHOPPING CART ITEMS COUNTER //
+
+		let cartCounter = document.getElementById('shop');
+
+		cartCounter.innerHTML = '(' + shoppingCart.length + ')';
+
+
+		/* 
+		
+		- In local storage you'll have an array to store ur shopping cart items
+		- the length of the array is the total number os items I will have in the shopping cart (cart icon)
+		- shopping cart items are stored as objects (id, name, etc.) within the array
+		- add and remove items from the shopping cart array in local storage
+		- list items of the array once user goes to shopping cart page
+
+		  */
 
 	});
 
