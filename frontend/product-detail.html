@@ -11,34 +11,38 @@
 
 	<!-- MAIN NAV -->
 
-	<div class="container-fluid px-0">
+<div class="container-fluid">
 		<header class="row">
 			<nav class="col navbar navbar-dark navbar-expand-md bg-gradient-info">
-				<a class="col-8 col-lg-3 navbar-brand" href="index.html">
+				<a class="col-6 col-md-3 navbar-brand" href="index.html">
 					<img src="images/analog-logo.png" class="w-50 my-3" alt="Analog's Logo">
 				</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        			<span class="navbar-toggler-icon"></span>
-    			</button>
-    			<div id="navbarCollapse" class="collapse navbar-collapse">
-					<ul class="col-6 navbar-nav justify-content-center h5">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div id="navbarCollapse" class="collapse navbar-collapse col-4 col-md-6 justify-content-center">
+					<ul class="nav nav-pills nav-fill h6">
 						<li class="nav-item">
-							<a class="nav-link text-light" href="about.html">About</a>
+							<a class="nav-link text-light text-uppercase" href="about.html">About</a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle text-light" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Shop</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					          <a class="dropdown-item" href="#">Cameras</a>
-					          <a class="dropdown-item" href="#">Lenses</a>
-					          <a class="dropdown-item" href="#">Accessories</a>
-					        </div>
+							<a class="nav-link active bg-warning shadow text-dark text-uppercase" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Shop</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="listing-cameras.html">Cameras</a>
+								<a class="dropdown-item" href="#">Lenses</a>
+								<a class="dropdown-item" href="#">Accessories</a>
+							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-light" href="contact.html">Contact</a>
+							<a class="nav-link text-light text-uppercase" href="contact.html">Contact</a>
 						</li>
 					</ul>
 				</div>
-				<div id="shop"></div>
+				<div id="shop" class="col-2 col-md-3 text-right pr-md-5">
+					<a href="shopping-cart.html">
+						<img src="icons/shopping-basket-solid.svg" alt="Shopping Cart" style="width: 40px; cursor: pointer;">
+					</a>
+				</div>
 			</nav>
 		</header>
 		<nav aria-label="breadcrumb">
@@ -66,62 +70,56 @@
 
 	<!-- FOOTER -->
 
-	<footer class="row">
-		<div class="col-12">
-			<footer class="page-footer font-small bg-gradient-dark pt-4 text-light">
-	 			<div class="container-fluid text-center text-md-left">
-				    <div class="row">
-				      <div class="col-md-6 mt-md-0 mt-3">
-				        <h5 class="text-uppercase">Footer Content</h5>
-				        <p>Here you can use rows and columns to organize your footer content.</p>
-				      </div>
+	<div class="container-fluid">
+		<div class="row">
+			<footer class="col-12 page-footer font-small bg-gradient-dark pt-4 text-light">
+				<div class="text-center text-md-left">
+					<div class="row">
+						<div class="col-md-6 mt-md-0 mt-3">
+							<h6 class="text-uppercase">LOREM IPSUM</h6>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</div>
 
-	      		<hr class="clearfix w-100 d-md-none pb-3">
+						<hr class="clearfix w-100 d-md-none pb-3">
 
-	      			<div class="col-md-3 mb-md-0 mb-3">
-	        			<h5 class="text-uppercase">Links</h5>
-	        			<ul class="list-unstyled">
-				          <li>
-				            <a href="#!">Link 1</a>
-				          </li>
-				          <li>
-				            <a href="#!">Link 2</a>
-				          </li>
-				          <li>
-				            <a href="#!">Link 3</a>
-				          </li>
-				          <li>
-				            <a href="#!">Link 4</a>
-				          </li>
-	        			</ul>
-	      			</div>
-	 
-	      <div class="col-md-3 mb-md-0 mb-3">
-	        <h5 class="text-uppercase">Links</h5>
-	        <ul class="list-unstyled">
-	          <li>
-	            <a href="#!">Link 1</a>
-	          </li>
-	          <li>
-	            <a href="#!">Link 2</a>
-	          </li>
-	          <li>
-	            <a href="#!">Link 3</a>
-	          </li>
-	          <li>
-	            <a href="#!">Link 4</a>
-	          </li>
-	        </ul>
-	      </div>
-	    </div>
-	  </div>
+						<div class="col-md-3 mb-md-0 mb-3">
+							<h6 class="text-uppercase">Partners</h6>
+							<ul class="list-unstyled">
+								<li>
+									<a href="#!" class="text-info">Vintage Pics</a>
+								</li>
+								<li>
+									<a href="#!" class="text-info">Ol'Film</a>
+								</li>
+								<li>
+									<a href="#!" class="text-info">Ken Rockwell</a>
+								</li>
+							</ul>
+						</div>
 
-	  <div class="footer-copyright text-center font-weight-light py-3">© 2020 Analog Copyright</div>
+						<div class="col-md-3 mb-md-0 mb-3">
+							<h6 class="text-uppercase">Social Media</h6>
+							<ul class="list-unstyled">
+								<li>
+									<a href="#!" class="text-info">Facebook</a>
+								</li>
+								<li>
+									<a href="#!" class="text-info">Instagram</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-	</footer>
+				<div class="footer-copyright text-center text-md-left font-weight-light py-3 text-muted">© 2020 Analog Copyright</div>
+
+			</footer>
+		</div>
+	</div>
 
 	<script type="text/javascript" src="js/jquery-min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-bundle-min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/product.js"></script>
 
 </body>

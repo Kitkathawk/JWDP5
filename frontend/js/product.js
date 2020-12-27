@@ -71,16 +71,7 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 
 	let addToCart = document.getElementById('cart');
 
-	//let shoppingCart = [];
-
 	addToCart.addEventListener('click', function(){
-
-		/*
-		
-			- if a shopping cart item in local storage doesn't exist, create it
-			- if the item in local storage does exist, then replace the array in line 74 with local storage array
-
-		*/
 
 		if (!localStorage.getItem('shoppingCart')) {
 
@@ -101,9 +92,9 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 
 		// SHOPPING CART ITEMS COUNTER //
 
-		let cartCounter = document.getElementById('shop');
+		/*let cartCounter = document.getElementById('shop');
 
-		cartCounter.innerHTML = '(' + shoppingCart.length + ')';
+		cartCounter.innerHTML = '(' + shoppingCart.length + ')';*/
 
 
 		/* 
