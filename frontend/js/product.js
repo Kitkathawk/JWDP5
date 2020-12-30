@@ -99,11 +99,8 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 
 		/* 
 		
-		- In local storage you'll have an array to store ur shopping cart items
 		- the length of the array is the total number os items I will have in the shopping cart (cart icon)
-		- shopping cart items are stored as objects (id, name, etc.) within the array
-		- add and remove items from the shopping cart array in local storage
-		- list items of the array once user goes to shopping cart page
+		- remove items from the shopping cart array in local storage
 
 		  */
 
