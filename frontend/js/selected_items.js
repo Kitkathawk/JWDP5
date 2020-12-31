@@ -95,8 +95,13 @@ if (shoppingCart === null || shoppingCart === undefined) {
 
 			deleteIcon[i].addEventListener('click', function(){
 
-				
+				console.log(i)
+				/*
 
+				Go into local storage and remove element by id
+				Select ul shopping cart li child that has the index i and remove it from the dom 
+
+				 */
 			});
 
 		}
