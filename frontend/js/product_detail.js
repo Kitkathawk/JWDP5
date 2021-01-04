@@ -24,6 +24,7 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 	// VALUES & ATTRIBUTES
 
 	itemImage.setAttribute('src', data.imageUrl);
+	itemImage.setAttribute('style', 'object-fit: cover;');
 	itemName.textContent = data.name;
 	itemPrice.textContent = '$ ' + data.price;
 	itemDescription.textContent = data.description;
