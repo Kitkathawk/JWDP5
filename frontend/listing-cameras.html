@@ -29,8 +29,8 @@
 							<a class="nav-link active bg-warning shadow text-dark text-uppercase" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Shop</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="listing-cameras.html">Cameras</a>
-								<a class="dropdown-item" href="#">Lenses</a>
-								<a class="dropdown-item" href="#">Accessories</a>
+								<a class="dropdown-item" href="listing-lens.html">Lenses</a>
+								<a class="dropdown-item" href="listing-access.html">Accessories</a>
 							</div>
 						</li>
 						<li class="nav-item">
@@ -38,10 +38,13 @@
 						</li>
 					</ul>
 				</div>
-				<div id="shop" class="col-2 col-md-3 text-right pr-md-5">
+				<div class="col-2 col-md-3 text-right pr-md-5">
 					<a href="shopping-cart.html">
 						<img src="icons/shopping-basket-solid.svg" alt="Shopping Cart" style="width: 40px; cursor: pointer;">
 					</a>
+					<div id="cart-counter">
+						
+					</div>
 				</div>
 			</nav>
 		</header>
@@ -53,12 +56,13 @@
 
 		<!-- PRODUCT LISTING -->
 
-		<ul id="listing" class="row">	
+			<p class="h4 mt-4">Cameras</p>
+			<ul id="listing" class="row">	
 
-			
+				
 
-		</ul>
-		
+			</ul>
+
 	</main>
 
 	<!-- FOOTER -->
@@ -113,6 +117,7 @@
 	<script type="text/javascript" src="js/jquery-min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-bundle-min.js"></script>
 	<script type="text/javascript" src="js/product_listing.js"></script>
+	<script type="text/javascript" src="js/shopping_cart_counter.js"></script>
 
 </body>
 </html>

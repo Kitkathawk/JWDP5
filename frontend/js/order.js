@@ -1,27 +1,27 @@
 
-// GET SHOPPING CART FROM LOCAL STORAGE & SET-UP PLACE ORDER EVENT LISTENER //
+// FORM VALIDATION //
 
-let placeOrder = document.getElementById('contact-form');
+let form = document.getElementById('contact-form');
 let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
-placeOrder.addEventListener('submit', function(event) {
-	
-	let inputs = document.getElementsByTagName('input');
+form.addEventListener('submit', function(event) {
 
-	for (let i = 0; i < inputs.length; i++) {
+	if (!form.checkValidity() === false) {
 
-		if (!inputs[i].value) {
+		event.preventDefault();
+		event.stopPropagation();
 
-		} else if (inputs[i].value) {
+	} else {
 
-			event.preventDefault();
-
-		}
+		event.preventDefault();
+		form.classList.add('was-validated');
 
 	}
 
+	
 
-	// RETRIVE VALUES FROM CONTACT FORM // 
+
+	// RETRIEVE VALUES FROM CONTACT FORM // 
 
 	let firstName = document.getElementById("inputFirstName").value;
 	let lastName = document.getElementById("inputLastName").value;
@@ -31,6 +31,7 @@ placeOrder.addEventListener('submit', function(event) {
 	let country = document.getElementById("inputCountry").value;
 	let email = document.getElementById("inputEmail").value;
 	let phone = document.getElementById("inputPhone").value;
+
 
 	// SET-UP CONTACT OBJ + PRODUCTS ARR + TOTAL PRICE
 
@@ -44,11 +45,13 @@ placeOrder.addEventListener('submit', function(event) {
 
 		totalPrice += parseFloat(shoppingCart[i].price);
 
-	}
+	} 
 
 	// SET-UP POST REQUEST //
 
-	fetch('http://localhost:3002/api/cameras/order', 
+	if (form.checkValidity() === true) {
+
+		fetch('http://localhost:3002/api/cameras/order', 
 
 		{
 			method: 'post',
@@ -56,50 +59,35 @@ placeOrder.addEventListener('submit', function(event) {
 			body: JSON.stringify({ products, contact }),
 		}
 
-	)
+		)
 
-	.then(function(response) {
+		.then(function(response) {
 
-		return response.json();
+			return response.json();
 
-	}).then(function(data) {
+		}).then(function(data) {
+			
+			localStorage.setItem("orderId", data.orderId);
+			localStorage.setItem("totalPrice", totalPrice);
+			window.location.href = "confirmation.html?orderId=" + data.orderId;
 
-		localStorage.setItem("orderId", data.orderId);
-        localStorage.setItem("totalPrice", totalPrice);
-        window.location.href = "confirmation.html?orderId=" + data.orderId;
+		}).catch(error => alert('Whoops! Something went wrong...'));
 
-	}).catch(error => alert('Whoops! Something went wrong...'));
+	}
+
+	localStorage.clear();
 
 });
 
 
 
-	window.addEventListener('load', function() {
-    
-    let form = document.getElementsByClassName('needs-validation');
- 
-    let validation = Array.prototype.filter.call(form, function(form) {
-
-      form.addEventListener('submit', function(event) {
-
-        if (form.checkValidity() === false) {
-
-          event.preventDefault();
-          event.stopPropagation();
-
-        }
-
-        form.classList.add('was-validated');
-
-      }, false);
-
-    });
-
-  });
 
 
 
 
-	
+
+
+
+
 
 

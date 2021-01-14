@@ -29,8 +29,8 @@
 							<a class="nav-link active bg-warning shadow text-dark text-uppercase" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Shop</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="listing-cameras.html">Cameras</a>
-								<a class="dropdown-item" href="#">Lenses</a>
-								<a class="dropdown-item" href="#">Accessories</a>
+								<a class="dropdown-item" href="listing-lens.html">Lenses</a>
+								<a class="dropdown-item" href="listing-access.html">Accessories</a>
 							</div>
 						</li>
 						<li class="nav-item">
@@ -38,10 +38,13 @@
 						</li>
 					</ul>
 				</div>
-				<div id="shop" class="col-2 col-md-3 text-right pr-md-5">
+				<div class="col-2 col-md-3 text-right pr-md-5">
 					<a href="shopping-cart.html">
 						<img src="icons/shopping-basket-solid.svg" alt="Shopping Cart" style="width: 40px; cursor: pointer;">
 					</a>
+					<div id="cart-counter">
+						
+					</div>
 				</div>
 			</nav>
 		</header>
@@ -109,14 +112,14 @@
 				<img src="images/lens.jpg" class="card-img-top rounded shadow" alt="Photo of Lens">
 				<div class="card-body pl-0 text-dark text-center">
 					<h5 class="card-title" style="margin-top: -10px">Lenses</h5>
-					<a href="#" class="stretched-link"></a>
+					<a href="listing-lens.html" class="stretched-link"></a>
 				</div>
 			</div>
 			<div class="col-12 col-md-4 card bg-light" style="width: 18rem;">
 				<img src="images/film.jpg" class="card-img-top rounded shadow" alt="Hand Holding Photographic Film">
 				<div class="card-body text-dark text-center">
 					<h5 class="card-title" style="margin-top: -10px">Accessories</h5>
-					<a href="#" class="stretched-link"></a>
+					<a href="listing-access.html" class="stretched-link"></a>
 				</div>
 			</div>
 		</section>
@@ -200,6 +203,7 @@
 
 	<script type="text/javascript" src="js/jquery-min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-bundle-min.js"></script>
+	<script type="text/javascript" src="js/shopping_cart_counter.js"></script>
 
 </body>
 </html>

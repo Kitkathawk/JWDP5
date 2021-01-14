@@ -6,15 +6,18 @@ let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
 // SHOPPING CART EMPTY //
 
-if (shoppingCart === null || shoppingCart === undefined) {
+if (shoppingCart === null || shoppingCart === undefined || shoppingCart.length < 1) {
 
 	document.getElementById('shopping-cart').innerHTML = 'The shopping cart is empty.';
 
-}
+	document.getElementById('total').style.display = 'none';
+	document.getElementById('checkout').style.display = 'none';
+
+} 
 
 // SHOPPING CART LIST ITEMS //
 
-let totalPrice = 0; 
+let totalPrice = 0;
 
 for (let i = 0; i < shoppingCart.length; i++) {
 
@@ -45,7 +48,7 @@ for (let i = 0; i < shoppingCart.length; i++) {
 
 	// CLASSES 
 
-	listShoppingCart.classList.add('col-12', 'list-unstyled', 'mt-4', 'mb-1', 'p-sm-0');
+	listShoppingCart.classList.add('col-12', 'list-unstyled', 'mb-1', 'p-sm-0');
 	shoppingCartItem.classList.add('col-12', 'card', 'flex-sm-row', 'shadow', 'd-sm-flex', 'align-items-center', 'pl-0', 'pr-0', 'my-3');
 	itemImage.classList.add('col-12', 'col-sm-3', 'card-img-top', 'img-fluid', 'pl-0', 'pr-0', 'rounded');
 	itemName.classList.add('col-12', 'col-sm-4', 'mb-0');
@@ -98,15 +101,22 @@ let deleteIcon = document.getElementsByClassName('delete');
 
 for (let i = 0; i < deleteIcon.length; i++) {
 
-	deleteIcon[i].addEventListener('click', function(){
+	deleteIcon[i].addEventListener('click', function(event) {
 
-		console.log(i)
-		/*
+		event.preventDefault();
 
-		Go into local storage and remove element by id
-		Select ul shopping cart li child that has the index i and remove it from the dom 
+		let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
-		*/
+		shoppingCart.splice(i, 1);
+
+		localStorage.removeItem('shoppingCart');
+
+		let sendToLocalStorage = JSON.stringify(shoppingCart);
+
+		localStorage.setItem('shoppingCart', sendToLocalStorage);
+
+		location.reload();
+
 	});
 
 }

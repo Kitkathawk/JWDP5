@@ -11,14 +11,16 @@ fetch('http://localhost:3002/api/cameras')
   		// DOM ELEMENTS
 
   		let li = document.createElement('li');
-  		let article = document.createElement('article');
   		let link = document.createElement('a');
+      let article = document.createElement('article');
   		let itemImage = document.createElement('img');
+      let div = document.createElement('div');
   		let itemName = document.createElement('h5');
   		let itemPrice = document.createElement('p');
 
   		// VALUES & ATTRIBUTES
 
+      article.setAttribute('style', 'margin-bottom: 30px');
   		link.setAttribute('href', 'product-detail.html');
   		itemImage.setAttribute('src', data[i].imageUrl);
   		itemName.textContent = data[i].name;
@@ -28,7 +30,7 @@ fetch('http://localhost:3002/api/cameras')
 
   		link.addEventListener('click', function(){
 
-  			let myStorage = window.localStorage;
+  		let myStorage = window.localStorage;
 			myStorage.setItem('id', data[i]._id);
 
   		});
@@ -37,16 +39,19 @@ fetch('http://localhost:3002/api/cameras')
 
   		link.append(itemImage);
   		article.append(link);
-  		article.append(itemName);
-  		article.append(itemPrice);
-  		li.append(article);
+      div.append(itemName);
+      div.append(itemPrice);
+  		article.append(div);
+      li.append(article);
   		catalog.append(li);
 
   		// CLASSES 
 
-  		catalog.classList.add('my-5');
-  		li.classList.add('col-12', 'col-md-6', 'col-lg-4', 'card', 'shadow', 'm-2');
-  		itemImage.classList.add('card-img-top', 'rounded');
+  		catalog.classList.add('mt-4', 'mb-5', 'p-0');
+      article.classList.add('card', 'shadow');
+  		li.classList.add( 'col-12', 'col-md-6', 'col-lg-4', 'list-unstyled');
+  		itemImage.classList.add('card-img-top', 'rounded-top');
+      div.classList.add('card-body');
   	}
 
 });

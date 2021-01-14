@@ -6,7 +6,7 @@ const id = myStorage.getItem('id');
 fetch(`http://localhost:3002/api/cameras/${id}`)
   .then(response => response.json())
   .then(function(data){
-
+console.log(data)
   	let productDetail = document.getElementById('product-detail');
 
 	// DOM ELEMENTS
@@ -90,20 +90,16 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 
 		localStorage.setItem('shoppingCart', sendToLocalStorage);
 
+		location.reload();
 
-		// SHOPPING CART ITEMS COUNTER //
+		//let counts = [{_id: 123, name: abc, quantity: 1},{_id: 456}];
+		/*
+			if (counts._id === shoppingCart[i]._id) {
 
-		/*let cartCounter = document.getElementById('shop');
+				counts.quantity += 1;
 
-		cartCounter.innerHTML = '(' + shoppingCart.length + ')';*/
-
-
-		/* 
-		
-		- the length of the array is the total number os items I will have in the shopping cart (cart icon)
-		- remove items from the shopping cart array in local storage
-
-		  */
+			}
+		*/
 
 	});
 
