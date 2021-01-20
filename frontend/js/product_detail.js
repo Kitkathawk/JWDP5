@@ -14,7 +14,7 @@ console.log(data)
 	let article = document.createElement('article');
 	let div = document.createElement('div');
 	let itemImage = document.createElement('img');
-	let itemName = document.createElement('h5');
+	let itemName = document.createElement('h1');
 	let itemPrice = document.createElement('p');
 	let itemDescription = document.createElement('p');
 	let chooseLens = document.createElement('select');
@@ -59,9 +59,10 @@ console.log(data)
 
 	// CLASSES 
 
-  	article.classList.add('col-12', 'col-lg-10', 'px-0', 'card', 'mx-auto', 'mt-4', 'mb-5', 'd-flex', 'flex-row', 'shadow');
-  	div.classList.add('card-body', 'col-6');
-  	itemImage.classList.add('col-6','card-img-top', 'rounded', 'img-fluid', 'pl-0');
+  	article.classList.add('col-10', 'col-md-12', 'col-lg-10',  'px-0', 'card', 'mx-auto', 'mt-4', 'mb-5', 'd-flex', 'flex-column', 'flex-md-row', 'shadow');
+  	div.classList.add('card-body', 'col-12', 'col-md-6');
+  	itemName.classList.add('h5');
+  	itemImage.classList.add('col-12', 'col-md-6','card-img-top', 'rounded', 'img-fluid', 'px-0', 'pl-md-0');
   	itemDescription.classList.add('mb-4');
   	chooseLensLabel.classList.add('mr-2');
   	chooseLens.classList.add('bg-light');

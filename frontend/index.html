@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>ANALOG | Vintage Cameras, Lenses and Accessories!</title>
+	<title>ORINOCO | Vintage Cameras, Lenses and Accessories!</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Add description">
+	<meta name="description" content="The go-to vintage photography shop, were you can find the best cameras, lenses and acessories!">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
 </head>
 <body class="bg-light">
@@ -12,21 +12,23 @@
 	<!-- MAIN NAV -->
 
 	<div class="container-fluid">
+
 		<header class="row">
-			<nav class="col navbar navbar-dark navbar-expand-md bg-gradient-info">
+			<nav class="col-12 navbar navbar-dark navbar-expand-md bg-gradient-info">
 				<a class="col-6 col-md-3 navbar-brand" href="index.html">
-					<img src="images/analog-logo.png" class="w-50 my-3" alt="Analog's Logo">
+					<img src="images/orinoco-logo.svg" class="my-3" alt="Orinoco's Logo" style="width: 130px;">
 				</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div id="navbarCollapse" class="collapse navbar-collapse col-4 col-md-6 justify-content-center">
-					<ul class="nav nav-pills nav-fill h6">
+				<div id="navbarCollapse" class="collapse navbar-collapse col-12 col-md-6 justify-content-center">
+					<hr class="clearfix w-100 d-md-none pb-3 border-light">
+					<ul class="nav flex-column flex-md-row nav-pills nav-md-fill h6 mb-4 mb-md-0">
 						<li class="nav-item">
-							<a class="nav-link text-light text-uppercase" href="about.html">About</a>
+							<a class="nav-link text-light text-uppercase text-center" href="about.html">About</a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link active bg-warning shadow text-dark text-uppercase" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Shop</a>
+							<a class="nav-link active bg-warning shadow text-dark text-uppercase text-center dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Shop</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="listing-cameras.html">Cameras</a>
 								<a class="dropdown-item" href="listing-lens.html">Lenses</a>
@@ -34,11 +36,14 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-light text-uppercase" href="contact.html">Contact</a>
+							<a class="nav-link text-light text-uppercase text-center" href="contact.html">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a id="cart-mobile" class="nav-link text-light text-uppercase text-center d-block d-md-none" href="shopping-cart.html">Shopping Cart</a>
 						</li>
 					</ul>
 				</div>
-				<div class="col-2 col-md-3 text-right pr-md-5">
+				<div class="col-3 text-right pr-md-5 d-none d-md-block">
 					<a href="shopping-cart.html">
 						<img src="icons/shopping-basket-solid.svg" alt="Shopping Cart" style="width: 40px; cursor: pointer;">
 					</a>
@@ -48,7 +53,7 @@
 				</div>
 			</nav>
 		</header>
-		
+
 
 		<!-- SLIDER -->
 
@@ -62,21 +67,21 @@
 					</ol>
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="images/camera-lenses.jpg" class="d-block w-100 img-fluid" style="object-fit: cover; height:400px;" alt="Vintage Camera with Lenses">
+							<img src="images/camera-lenses.jpg" class="d-block w-100 img-fluid" style="object-fit: cover; height:400px;" alt="Vintage Camera with Lenses Bundle">
 							<div class="carousel-caption">
 								<h3>Vintage Bundles</h3>
 								<h5>Mix-and-match your favorites!</h5>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<img src="images/camera-dark.jpg" class="d-block w-100 img-fluid" style="object-fit: cover; height:400px;" alt="Photo of Vintage Camera">
+							<img src="images/camera-dark.jpg" class="d-block w-100 img-fluid" style="object-fit: cover; height:400px;" alt="Black Friday Polaroid">
 							<div class="carousel-caption">
 								<h3>Black Friday 4Ever</h3>
 								<h5>Special promos every Friday!</h5>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<img src="images/lens-hand.jpg" class="d-block w-100 img-fluid" style="object-fit: cover; height:400px;" alt="Hand Holding Lens">
+							<img src="images/lens-hand.jpg" class="d-block w-100 img-fluid" style="object-fit: cover; height:400px;" alt="Lenses Repair Service">
 							<div class="carousel-caption">
 								<h3>Best Lens Care</h3>
 								<h5>Check our lens repairing service!</h5>
@@ -100,6 +105,7 @@
 	<!-- CARDS MENU -->
 
 	<div class="container">
+
 		<section class="row">
 			<div class="col-12 col-md-4 card bg-light mb-4" style="width: 18rem;">
 				<img src="images/camera.jpg" class="card-img-top rounded shadow" alt="Photo of Vintage Camera">
@@ -124,37 +130,40 @@
 			</div>
 		</section>
 
+
 		<!-- ARTICLES -->
 
 		<section class="row mt-3 mt-lg-2 mb-5">
 			<div class="col-12 col-lg-4 card mb-3 bg-light" style="width: 18rem;">
 				<div class="card-body shadow rounded">
 					<h5 class="card-title">10 Great Vintage Lenses!</h5>
-					<p class="card-text">Our team <span class="text-info">@Analog</span> has made a selection of the greatest vintage lenses for capturing classical images.</p>
-					<a href="#" class="card-link">Read more...</a>
+					<p class="card-text">Our team <span class="text-info">@Orinoco</span> has made a selection of the greatest vintage lenses for capturing classical images.</p>
+					<a href="blog-article.html" class="card-link">Read more...</a>
 				</div>
 			</div>
 			<div class="col-12 col-lg-4 card mb-3 bg-light" style="width: 18rem;">
 				<div class="card-body shadow rounded">
 					<h5 class="card-title">Picture It</h5>
 					<p class="card-text">Check out the gallery with the lastest photos from our customers.</p>
-					<a href="#" class="card-link">Read more...</a>
+					<a href="blog-article.html" class="card-link">Read more...</a>
 				</div>
 			</div>
 			<div class="col-12 col-lg-4 card mb-3 bg-light" style="width: 18rem;">
 				<div class="card-body shadow rounded">
 					<h5 class="card-title">Photography Tips from...<br>Annie Leibovitz</h5>
 					<p class="card-text">Check how to better your photography skills with one of the most iconic photographers of our time.</p>
-					<a href="#" class="card-link">Read more...</a>
+					<a href="blog-article.html" class="card-link">Read more...</a>
 				</div>
 			</div>
 		</section>
+
 	</div>
 
 
 	<!-- FOOTER -->
 
 	<div class="container-fluid">
+
 		<div class="row">
 			<footer class="col-12 page-footer font-small bg-gradient-dark pt-4 text-light">
 				<div class="text-center text-md-left">
@@ -195,10 +204,11 @@
 					</div>
 				</div>
 
-				<div class="footer-copyright text-center text-md-left font-weight-light py-3 text-muted">© 2020 Analog Copyright</div>
+				<div class="footer-copyright text-center text-md-left font-weight-light py-3 text-muted">© 2020 Orinoco Copyright</div>
 
 			</footer>
 		</div>
+		
 	</div>
 
 	<script type="text/javascript" src="js/jquery-min.js"></script>

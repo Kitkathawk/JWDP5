@@ -8,12 +8,19 @@ let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
 if (shoppingCart === null || shoppingCart === undefined || shoppingCart.length < 1) {
 
-	document.getElementById('shopping-cart').innerHTML = 'The shopping cart is empty.';
+	let paragraph = document.createElement('p'); 
+
+	paragraph.textContent = 'The shopping cart is empty.';
+
+	document.getElementById('shopping-cart').append(paragraph);
 
 	document.getElementById('total').style.display = 'none';
 	document.getElementById('checkout').style.display = 'none';
 
-} 
+	paragraph.classList.add('col-12', 'px-md-0', 'mt-3', 'mb-5');
+	paragraph.setAttribute('style', 'margin-left: -15px;');
+
+}
 
 // SHOPPING CART LIST ITEMS //
 

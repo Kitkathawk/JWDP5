@@ -23,6 +23,7 @@ fetch('http://localhost:3002/api/cameras')
       article.setAttribute('style', 'margin-bottom: 30px');
   		link.setAttribute('href', 'product-detail.html');
   		itemImage.setAttribute('src', data[i].imageUrl);
+      itemImage.setAttribute('style', 'height: 190px; object-fit: cover;');
   		itemName.textContent = data[i].name;
   		itemPrice.textContent = '$ ' + data[i].price;
 

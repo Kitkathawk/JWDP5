@@ -10,7 +10,7 @@ let totalPrice = localStorage.getItem('totalPrice');
 	// DOM ELEMENTS
 
 	let orderConfirmation = document.getElementById('confirmation');
-	let thanksOrder = document.createElement('h4');
+	let thanksOrder = document.createElement('h1');
 	let textOrderPrice = document.createElement('p');
 	let textOrderId = document.createElement('p');
 	let redirectHome = document.createElement('p'); 
@@ -31,5 +31,5 @@ let totalPrice = localStorage.getItem('totalPrice');
 
 	// CLASSES
 
-	thanksOrder.classList.add('my-4');
+	thanksOrder.classList.add('h4 my-4');
 	redirectHome.classList.add('my-5');
