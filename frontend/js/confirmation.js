@@ -31,5 +31,5 @@ let totalPrice = localStorage.getItem('totalPrice');
 
 	// CLASSES
 
-	thanksOrder.classList.add('h4 my-4');
+	thanksOrder.classList.add('h4', 'my-4');
 	redirectHome.classList.add('my-5');

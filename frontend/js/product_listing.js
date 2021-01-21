@@ -3,6 +3,7 @@
 fetch('http://localhost:3002/api/cameras')
   .then(response => response.json())
   .then(function(data){
+    console.log(data)
   	
   	let catalog = document.getElementById('listing');
   	
