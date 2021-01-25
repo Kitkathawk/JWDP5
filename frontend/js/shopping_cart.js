@@ -8,19 +8,26 @@ let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
 if (shoppingCart === null || shoppingCart === undefined || shoppingCart.length < 1) {
 
-	let paragraph = document.createElement('p'); 
+	let paragraph = document.createElement('p');
+	let img = document.createElement('img');
+	let div = document.createElement('div');
 
+	img.setAttribute('src', 'icons/empty-cart.svg');
 	paragraph.textContent = 'The shopping cart is empty.';
 
-	document.getElementById('shopping-cart').append(paragraph);
+	div.append(img);
+	div.append(paragraph);
+	document.getElementById('shopping-cart').append(div);
 
 	document.getElementById('total').style.display = 'none';
 	document.getElementById('checkout').style.display = 'none';
 
-	paragraph.classList.add('col-12', 'px-md-0', 'mt-3', 'mb-5');
-	paragraph.setAttribute('style', 'margin-left: -15px;');
+	div.classList.add('col-12', 'd-flex', 'flex-column', 'align-items-center');
+	img.classList.add('w-25', 'mt-4', 'mb-3');
+	paragraph.classList.add('mt-3', 'mb-5', 'text-center');
 
 }
+
 
 // SHOPPING CART LIST ITEMS //
 
@@ -55,12 +62,12 @@ for (let i = 0; i < shoppingCart.length; i++) {
 
 	// CLASSES 
 
-	listShoppingCart.classList.add('col-12', 'list-unstyled', 'mb-1', 'p-sm-0');
+	listShoppingCart.classList.add('col-12', 'list-unstyled', 'mb-1', 'px-sm-0');
 	shoppingCartItem.classList.add('col-12', 'card', 'flex-sm-row', 'shadow', 'd-sm-flex', 'align-items-center', 'pl-0', 'pr-0', 'my-3');
-	itemImage.classList.add('col-12', 'col-sm-3', 'card-img-top', 'img-fluid', 'pl-0', 'pr-0', 'rounded');
-	itemName.classList.add('col-12', 'col-sm-4', 'mb-0');
+	itemImage.classList.add('col-12', 'col-sm-3', 'card-img-top', 'img-fluid', 'pl-0', 'pr-0', 'rounded', 'mb-2', 'mb-sm-0');
+	itemName.classList.add('col-12', 'col-sm-4', 'mb-1', 'mb-sm-0');
 	itemPrice.classList.add('col-12', 'col-sm-3', 'text-md-right', 'mb-0');
-	deleteItem.classList.add('col-2', 'delete');
+	deleteItem.classList.add('col-2', 'delete', 'my-3', 'my-sm-0', 'align-self-end', 'align-self-sm-center');
 	
 	// ADDING UP TOTAL PRICE
 
@@ -97,7 +104,7 @@ let link = document.createElement('a');
 
 	// CLASSES
 
-	checkoutBtn.classList.add('btn', 'bg-warning', 'text-dark', 'shadow', 'mb-5', 'font-weight-bold');
+	checkoutBtn.classList.add('btn', 'bg-warning', 'text-dark', 'shadow', 'mb-5', 'font-weight-bold', 'mr-3', 'mr-sm-0');
 	checkoutBtn.style = 'float: right;';
 
 
