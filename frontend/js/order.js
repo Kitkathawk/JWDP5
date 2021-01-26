@@ -18,8 +18,6 @@ form.addEventListener('submit', function(event) {
 
 	}
 
-	
-
 
 	// RETRIEVE VALUES FROM CONTACT FORM // 
 

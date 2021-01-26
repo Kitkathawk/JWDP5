@@ -4,10 +4,10 @@ let myStorage = window.localStorage;
 const id = myStorage.getItem('id');
 
 fetch(`http://localhost:3002/api/cameras/${id}`)
-  .then(response => response.json())
-  .then(function(data){
-console.log(data)
-  	let productDetail = document.getElementById('product-detail');
+.then(response => response.json())
+.then(function(data){
+
+	let productDetail = document.getElementById('product-detail');
 
 	// DOM ELEMENTS
 
@@ -59,48 +59,66 @@ console.log(data)
 
 	// CLASSES 
 
-  	article.classList.add('col-10', 'col-md-12', 'col-lg-10',  'px-0', 'card', 'mx-auto', 'mt-4', 'mb-5', 'd-flex', 'flex-column', 'flex-md-row', 'shadow');
-  	div.classList.add('card-body', 'col-12', 'col-md-6');
-  	itemName.classList.add('h5');
-  	itemImage.classList.add('col-12', 'col-md-6','card-img-top', 'rounded', 'img-fluid', 'px-0', 'pl-md-0');
-  	itemDescription.classList.add('mb-4');
-  	chooseLensLabel.classList.add('mr-2');
-  	chooseLens.classList.add('bg-light');
-  	shoppingCartBtn.classList.add('btn', 'btn-warning', 'mt-5', 'd-block', 'font-weight-bold');
+	article.classList.add('col-10', 'col-md-12', 'col-lg-10',  'px-0', 'card', 'mx-auto', 'mt-4', 'mb-5', 'd-flex', 'flex-column', 'flex-md-row', 'shadow');
+	div.classList.add('card-body', 'col-12', 'col-md-6');
+	itemName.classList.add('h5');
+	itemImage.classList.add('col-12', 'col-md-6','card-img-top', 'rounded', 'img-fluid', 'px-0', 'pl-md-0');
+	itemDescription.classList.add('mb-4');
+	chooseLensLabel.classList.add('mr-2');
+	chooseLens.classList.add('bg-light');
+	shoppingCartBtn.classList.add('btn', 'btn-warning', 'mt-5', 'd-block', 'font-weight-bold');
 
 
 // SHOPPING CART //
 
-	let addToCart = document.getElementById('cart');
+let addToCart = document.getElementById('cart');
 
-	addToCart.addEventListener('click', function(){
+addToCart.addEventListener('click', function(){
 
-		if (!localStorage.getItem('shoppingCart')) {
+	if (!localStorage.getItem('shoppingCart')) {
 
-			let sendToLocalStorage = JSON.stringify([]);
-
-			localStorage.setItem('shoppingCart', sendToLocalStorage);
-
-		}
-
-		shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
-
-		shoppingCart.push(data);
-
-		let sendToLocalStorage = JSON.stringify(shoppingCart);
+		let sendToLocalStorage = JSON.stringify([]);
 
 		localStorage.setItem('shoppingCart', sendToLocalStorage);
 
-		location.reload();
+	}
 
-		//let counts = [{_id: 123, name: abc, quantity: 1},{_id: 456}];
-		/*
-			if (counts._id === shoppingCart[i]._id) {
+	shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
-				counts.quantity += 1;
+	shoppingCart.push(data);
+
+	let sendToLocalStorage = JSON.stringify(shoppingCart);
+
+	localStorage.setItem('shoppingCart', sendToLocalStorage);
+
+
+		// ITEM QUANTITY
+
+		let counter = 0;
+		let item_id = '';
+		let quantityItem = [{}];
+
+		for (let i = 0; i < shoppingCart.length; i++) {
+
+			item_id = shoppingCart[i]._id;
+			
+			if (item_id === shoppingCart[i]._id) {
+
+				counter += 1;	
 
 			}
-		*/
+
+		}
+
+		console.log(quantityItem)
+
+		sendToLocalStorage = JSON.stringify(quantityItem);
+
+		localStorage.setItem('quantityItem', sendToLocalStorage);
+
+		quantityItem = JSON.parse(localStorage.getItem('quantityItem'));
+
+		//location.reload();
 
 	});
 

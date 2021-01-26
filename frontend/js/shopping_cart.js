@@ -19,12 +19,12 @@ if (shoppingCart === null || shoppingCart === undefined || shoppingCart.length <
 	div.append(paragraph);
 	document.getElementById('shopping-cart').append(div);
 
-	document.getElementById('total').style.display = 'none';
+	document.getElementById('div-total').style.display = 'none';
 	document.getElementById('checkout').style.display = 'none';
 
 	div.classList.add('col-12', 'd-flex', 'flex-column', 'align-items-center');
 	img.classList.add('w-25', 'mt-4', 'mb-3');
-	paragraph.classList.add('mt-3', 'mb-5', 'text-center');
+	paragraph.classList.add('mt-3', 'mb-5', 'text-center', 'ml-sm-3', 'ml-md-4', 'ml-lg-5');
 
 }
 
