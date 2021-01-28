@@ -94,23 +94,21 @@ addToCart.addEventListener('click', function(){
 
 		// ITEM QUANTITY
 
-		let counter = 0;
-		let item_id = '';
-		let quantityItem = [{}];
+		let quantityItem = {}; 
 
 		for (let i = 0; i < shoppingCart.length; i++) {
 
-			item_id = shoppingCart[i]._id;
-			
-			if (item_id === shoppingCart[i]._id) {
+			if (quantityItem[shoppingCart[i]._id] === undefined) {
 
-				counter += 1;	
+				quantityItem[shoppingCart[i]._id] = 1;
+
+			} else {
+
+				quantityItem[shoppingCart[i]._id] += 1;
 
 			}
 
-		}
-
-		console.log(quantityItem)
+		};
 
 		sendToLocalStorage = JSON.stringify(quantityItem);
 
@@ -118,8 +116,19 @@ addToCart.addEventListener('click', function(){
 
 		quantityItem = JSON.parse(localStorage.getItem('quantityItem'));
 
-		//location.reload();
+		location.reload();
 
 	});
 
 });
+
+/* 
+
+	let newShoppingCart = [{
+		_id: id,
+		image: img,
+		quantity: quantity,
+		price: price
+	}]
+
+*/
