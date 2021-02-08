@@ -41,6 +41,7 @@ for (let i = 0; i < shoppingCart.length; i++) {
 	let shoppingCartItem = document.createElement('li');
 	let itemImage = document.createElement('img');
 	let itemName = document.createElement('h4');
+	let itemQuantity = document.createElement('p');
 	let itemPrice = document.createElement('p');
 	let deleteItem = document.createElement('img');
 
@@ -48,6 +49,7 @@ for (let i = 0; i < shoppingCart.length; i++) {
 
 	itemImage.setAttribute('src', shoppingCart[i].imageUrl);
 	itemName.textContent = shoppingCart[i].name;
+	itemQuantity.textContent = 'x ' + shoppingCart[i].quantity;
 	itemPrice.textContent = '$ ' + shoppingCart[i].price;
 	deleteItem.setAttribute('src', 'icons/trash-alt-regular.svg');
 	deleteItem.setAttribute('style', 'height: 20px; cursor: pointer;');
@@ -56,6 +58,7 @@ for (let i = 0; i < shoppingCart.length; i++) {
 
 	shoppingCartItem.append(itemImage);
 	shoppingCartItem.append(itemName);
+	shoppingCartItem.append(itemQuantity);
 	shoppingCartItem.append(itemPrice);
 	shoppingCartItem.append(deleteItem);
 	listShoppingCart.append(shoppingCartItem);
@@ -65,13 +68,14 @@ for (let i = 0; i < shoppingCart.length; i++) {
 	listShoppingCart.classList.add('col-12', 'list-unstyled', 'mb-1', 'px-sm-0');
 	shoppingCartItem.classList.add('col-12', 'card', 'flex-sm-row', 'shadow', 'd-sm-flex', 'align-items-center', 'pl-0', 'pr-0', 'my-3');
 	itemImage.classList.add('col-12', 'col-sm-3', 'card-img-top', 'img-fluid', 'pl-0', 'pr-0', 'rounded', 'mb-2', 'mb-sm-0');
-	itemName.classList.add('col-12', 'col-sm-4', 'mb-1', 'mb-sm-0');
-	itemPrice.classList.add('col-12', 'col-sm-3', 'text-md-right', 'mb-0');
+	itemName.classList.add('col-12', 'col-sm-3', 'mb-1', 'mb-sm-0');
+	itemQuantity.classList.add('col-12', 'col-sm-2', 'text-md-center', 'mb-0');
+	itemPrice.classList.add('col-12', 'col-sm-2', 'text-md-right', 'mb-0');
 	deleteItem.classList.add('col-2', 'delete', 'my-3', 'my-sm-0', 'align-self-end', 'align-self-sm-center');
 	
 	// ADDING UP TOTAL PRICE
 
-	totalPrice += parseFloat(shoppingCart[i].price);
+	totalPrice += parseFloat((shoppingCart[i].price * shoppingCart[i].quantity));
 
 }
 

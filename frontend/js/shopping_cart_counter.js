@@ -5,15 +5,27 @@
 
 	shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
-	if (shoppingCart) {
+	function shoppingCartCounter(arr) {
 
-		if (shoppingCart.length > 0) {
+		let counter = 0;
+	
+		if (arr && arr.length > 0) {
 
-		cartCounter.innerHTML = shoppingCart.length;
-		cartCounterMobile.innerHTML = 'SHOPPING CART (' + shoppingCart.length + ') ';
-		
+			for (let i = 0; i < arr.length; i++) {
+
+				counter = arr[i].quantity * arr.length;
+
+			}
+
 		}
+
+		return counter; 
 
 	}
 
+	cartCounter.innerHTML = counter;
+	cartCounterMobile.innerHTML = 'SHOPPING CART (' + counter + ') ';
+
+	shoppingCartCounter(shoppingCart); 
+	
 	cartCounter.classList.add('d-inline', 'text-light', 'py-1', 'font-weight-bold');

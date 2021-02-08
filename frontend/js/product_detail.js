@@ -71,64 +71,54 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 
 // SHOPPING CART //
 
-let addToCart = document.getElementById('cart');
+	let addToCart = document.getElementById('cart');
 
-addToCart.addEventListener('click', function(){
+	addToCart.addEventListener('click', function(event){
 
-	if (!localStorage.getItem('shoppingCart')) {
+		event.preventDefault();
 
-		let sendToLocalStorage = JSON.stringify([]);
+		if (!localStorage.getItem('shoppingCart')) {
 
-		localStorage.setItem('shoppingCart', sendToLocalStorage);
+			let sendToLocalStorage = JSON.stringify([]);
 
-	}
+			localStorage.setItem('shoppingCart', sendToLocalStorage);
 
-	shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+		}
 
-	shoppingCart.push(data);
+		shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
-	let sendToLocalStorage = JSON.stringify(shoppingCart);
+		function checkDuplicates(arr, objectID) {
 
-	localStorage.setItem('shoppingCart', sendToLocalStorage);
+			let isDuplicate = false;
+			let quantity = 1; 
 
+			for (let i = 0; i < arr.length; i++) {
 
-		// ITEM QUANTITY
+				if (arr[i]._id === objectID) {
 
-		let quantityItem = {}; 
-
-		for (let i = 0; i < shoppingCart.length; i++) {
-
-			if (quantityItem[shoppingCart[i]._id] === undefined) {
-
-				quantityItem[shoppingCart[i]._id] = 1;
-
-			} else {
-
-				quantityItem[shoppingCart[i]._id] += 1;
+					isDuplicate = true;
+					quantity = arr[i].quantity += 1;
+				
+				}
 
 			}
 
-		};
+			if (isDuplicate === false) {
 
-		sendToLocalStorage = JSON.stringify(quantityItem);
+				data.quantity = quantity; 
+				arr.push(data);
+			}
 
-		localStorage.setItem('quantityItem', sendToLocalStorage);
+			return arr; 
 
-		quantityItem = JSON.parse(localStorage.getItem('quantityItem'));
+		}
 
-		location.reload();
+		checkDuplicates(shoppingCart, data._id);	
+
+		let sendToLocalStorage = JSON.stringify(shoppingCart);
+
+		localStorage.setItem('shoppingCart', sendToLocalStorage);
 
 	});
 
 });
-
-/* 
-
-	let newShoppingCart = [{
-		_id: id,
-		image: img,
-		quantity: quantity,
-		price: price
-	}]
-
-*/
