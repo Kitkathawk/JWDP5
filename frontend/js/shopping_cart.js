@@ -120,12 +120,18 @@ let deleteIcon = document.getElementsByClassName('delete');
 for (let i = 0; i < deleteIcon.length; i++) {
 
 	deleteIcon[i].addEventListener('click', function(event) {
-
+		
 		event.preventDefault();
 
-		let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+		shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+		
+		shoppingCart[i].quantity -= 1;
 
-		shoppingCart.splice(i, 1);
+		if (shoppingCart[i].quantity === 0) {
+
+			shoppingCart.splice(i, 1);
+
+		}
 
 		localStorage.removeItem('shoppingCart');
 
@@ -134,12 +140,9 @@ for (let i = 0; i < deleteIcon.length; i++) {
 		localStorage.setItem('shoppingCart', sendToLocalStorage);
 
 		location.reload();
-
+		
 	});
-
+	
 }
-
-
-
 
 

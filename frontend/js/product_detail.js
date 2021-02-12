@@ -119,6 +119,8 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 
 		localStorage.setItem('shoppingCart', sendToLocalStorage);
 
+		location.reload();
+
 	});
 
 });

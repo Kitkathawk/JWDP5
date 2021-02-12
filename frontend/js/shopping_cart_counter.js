@@ -5,15 +5,15 @@
 
 	shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
+	let counter = 0;
+
 	function shoppingCartCounter(arr) {
 
-		let counter = 0;
-	
 		if (arr && arr.length > 0) {
 
 			for (let i = 0; i < arr.length; i++) {
 
-				counter = arr[i].quantity * arr.length;
+				counter += arr[i].quantity;
 
 			}
 
@@ -23,9 +23,18 @@
 
 	}
 
-	cartCounter.innerHTML = counter;
-	cartCounterMobile.innerHTML = 'SHOPPING CART (' + counter + ') ';
+	let counterTotal = shoppingCartCounter(shoppingCart);
 
-	shoppingCartCounter(shoppingCart); 
+	cartCounter.innerHTML = counterTotal;
+	cartCounterMobile.innerHTML = 'SHOPPING CART (' + counterTotal + ') ';
 	
 	cartCounter.classList.add('d-inline', 'text-light', 'py-1', 'font-weight-bold');
+
+	if (shoppingCart === null || shoppingCart === undefined || shoppingCart.length === 0) {
+
+		cartCounter.classList.remove('d-inline');
+		cartCounter.classList.add('d-none');
+		cartCounterMobile.classList.remove('d-inline');
+		cartCounterMobile.classList.add('d-none');
+
+	}
