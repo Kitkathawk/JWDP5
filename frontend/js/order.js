@@ -41,7 +41,7 @@ form.addEventListener('submit', function(event) {
 
 		products.push(shoppingCart[i]._id);
 
-		totalPrice += parseFloat(shoppingCart[i].price);
+		totalPrice += parseFloat((shoppingCart[i].price * shoppingCart[i].quantity));
 
 	} 
 

@@ -69,7 +69,7 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 	shoppingCartBtn.classList.add('btn', 'btn-warning', 'mt-5', 'd-block', 'font-weight-bold');
 
 
-// SHOPPING CART //
+	// SHOPPING CART //
 
 	let addToCart = document.getElementById('cart');
 
@@ -98,7 +98,7 @@ fetch(`http://localhost:3002/api/cameras/${id}`)
 
 					isDuplicate = true;
 					quantity = arr[i].quantity += 1;
-				
+					
 				}
 
 			}

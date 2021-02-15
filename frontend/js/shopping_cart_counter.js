@@ -1,40 +1,40 @@
-	// SHOPPING CART ITEMS COUNTER //
+// SHOPPING CART ITEMS COUNTER //
 
-	let cartCounter = document.getElementById('cart-counter');
-	let cartCounterMobile = document.getElementById('cart-mobile');
+let cartCounter = document.getElementById('cart-counter');
+let cartCounterMobile = document.getElementById('cart-mobile');
 
-	shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
-	let counter = 0;
+let counter = 0;
 
-	function shoppingCartCounter(arr) {
+function shoppingCartCounter(arr) {
 
-		if (arr && arr.length > 0) {
+	if (arr && arr.length > 0) {
 
-			for (let i = 0; i < arr.length; i++) {
+		for (let i = 0; i < arr.length; i++) {
 
-				counter += arr[i].quantity;
-
-			}
+			counter += arr[i].quantity;
 
 		}
 
-		return counter; 
-
 	}
 
-	let counterTotal = shoppingCartCounter(shoppingCart);
+	return counter; 
 
-	cartCounter.innerHTML = counterTotal;
-	cartCounterMobile.innerHTML = 'SHOPPING CART (' + counterTotal + ') ';
-	
-	cartCounter.classList.add('d-inline', 'text-light', 'py-1', 'font-weight-bold');
+}
 
-	if (shoppingCart === null || shoppingCart === undefined || shoppingCart.length === 0) {
+let counterTotal = shoppingCartCounter(shoppingCart);
 
-		cartCounter.classList.remove('d-inline');
-		cartCounter.classList.add('d-none');
-		cartCounterMobile.classList.remove('d-inline');
-		cartCounterMobile.classList.add('d-none');
+cartCounter.innerHTML = counterTotal;
+cartCounterMobile.innerHTML = 'SHOPPING CART (' + counterTotal + ') ';
 
-	}
+cartCounter.classList.add('d-inline', 'text-light', 'py-1', 'font-weight-bold');
+
+if (shoppingCart === null || shoppingCart === undefined || shoppingCart.length === 0) {
+
+	cartCounter.classList.remove('d-inline');
+	cartCounter.classList.add('d-none');
+	cartCounterMobile.classList.remove('d-inline');
+	cartCounterMobile.classList.add('d-none');
+
+}
