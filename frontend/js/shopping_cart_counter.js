@@ -34,7 +34,5 @@ if (shoppingCart === null || shoppingCart === undefined || shoppingCart.length =
 
 	cartCounter.classList.remove('d-inline');
 	cartCounter.classList.add('d-none');
-	cartCounterMobile.classList.remove('d-inline');
-	cartCounterMobile.classList.add('d-none');
 
 }
