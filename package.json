@@ -23,12 +23,12 @@
     "type": "git",
     "url": "git+https://github.com/Kitkathawk/JWDP5.git"
   },
+    "engines": {
+    "node": "14.15.5"
+  },
   "bugs": {
     "url": "https://github.com/Kitkathawk/JWDP5/issues"
   },
   "homepage": "https://github.com/Kitkathawk/JWDP5#readme",
   "devDependencies": {},
-  "engines": {
-    "node": "14.15.5"
-  }
 }
